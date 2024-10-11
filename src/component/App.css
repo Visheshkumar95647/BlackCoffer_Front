@@ -1,0 +1,449 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Fjalla+One&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+.bg-img{
+  height: 100vh;
+ 
+}
+a{
+  color: rgb(5, 49, 5);
+  text-decoration: none;
+}
+.front {
+  background-image: url(bg.jpg);
+  background-size: cover;
+  height: 100vh;
+  width:99vw;
+  position: relative;
+  display: flex;
+  gap:50px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image {
+  width: 25%;
+}
+
+.front-button{
+  width: 15%;
+  height: 9%;
+  font-size:150%;
+  border-radius: 10px;
+  border:none;
+  color: rgb(5, 49, 5);
+  font-weight: 900;
+  font-family: "Fjalla One", sans-serif;
+}
+/* Dash */
+/* main */
+
+
+main{
+  background-image: linear-gradient(black , rgb(5,49,5));
+  width:99vw;
+  padding-bottom: 19rem;
+}
+main .part1 .loc{
+  width: 300px;
+}
+.part1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+main .part1 p{
+  color: white;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+  width: 500px;
+}
+
+
+
+/* Profile */
+
+.right-sidebar{
+  color: white;
+  font-size: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  gap: 10px;
+  font-family: "Kanit", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-shadow: 1px 1px 20px yellow;
+}
+
+.edit{
+  padding-left: 200px;
+  padding-bottom: 40px;
+  display: flex;
+}
+.edit button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.edit button img{
+  width: 20px;
+}
+.profileimg img{
+  width: 90px;
+  height: 90px;
+  border-radius: 200px;
+}
+.edit .editing{
+  font-size: 15px;
+}
+
+.proaddress{
+  display: flex;
+  gap: 10px;
+}
+.proaddress img{
+  width: 30px;
+}
+
+/* SignUp */
+
+
+
+.input{
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  
+}
+.input input{
+  height: 45px;
+  width: 25vw;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 5px;
+  background: none;
+  color: white;
+  border: 2px rgb(137, 133, 133) solid;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+
+/* Starting */
+.logo-img img{
+  width: 400px;
+  padding-top: 50px;
+}
+
+.start{
+  display: flex;
+  justify-content: space-between;
+}
+
+.left-sidebar{
+  background-image: radial-gradient( rgb(5,49,5),black);
+  height: 100vh;
+  width: 20vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 900;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.left-sidebar .img img{
+  width: 180px;
+  padding-top: 50px;
+}
+.list h3{
+  color: white;
+}
+.list .icon img{
+  width: 25px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+
+.right-sidebar{
+  background-image: radial-gradient( rgb(5,49,5),black);
+  height: 100vh;
+  width: 20vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 100px;
+}
+
+
+/* Home Page */
+
+.uploads{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+.middle-bar .top .profileimage{
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+  border: 2px solid rgb(255, 255, 255);
+  
+}
+.middle-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  gap: 100px;
+  min-height: 100vh;
+  background-color: rgb(0, 0, 0);
+}
+
+.middle{
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+.middle .slide-container{
+  width: 468px;
+}
+.slide-container img{
+  height: 313.16px;
+  width: 468px;
+}
+
+.top{
+  background-image: linear-gradient(rgb(5,49,5),black);
+  width: 470px;
+  height: 10vh;
+  padding: 10px;
+  border-radius: 10px;
+}
+.top a{
+  font-family:'Courier New', Courier, monospace;
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+}
+.top .top-data{
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.bottom{
+  display: flex;
+  width: 470px;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(black , rgb(5,49,5));
+  height: 10vh;
+  border-radius: 10px;
+}
+.bottom button{
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.bottom button img{
+  width: 30px;
+  margin: 20px;
+}
+.feed{
+  display: flex;
+}
+
+
+
+/* Search Component */
+
+
+
+.searching{
+  height: 100vh;
+}
+.search-bar{
+  display: flex;
+  gap: 10px;
+}
+.search-bar input{
+  height: 40px;
+  width: 20rem;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.259);
+  color: white;
+  border: 1px solid white;
+}
+.search-bar button{
+  border: none;
+  width: 5rem;
+  height: 40px;
+  border-radius: 5px;
+}
+.search-top{
+  display: flex;
+  align-items: center;
+  height: 50px;
+  width: 25.5rem;
+  background-color: rgb(5, 49, 5);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.search-top-data{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.search-top-data .proname a{
+  font-family:'Courier New', Courier, monospace;
+  font-weight: 500;
+  font-size: 15px;
+  color: white;
+  font-style: normal;
+}
+.search-top-data img{
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+
+
+
+/* Inspect ProfileSection */
+.profileSec{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding: 100px;
+}
+.profileName,.profileUsername,.profileNumber,.profileAddress,.profileCity,.profilePin{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+}
+.profileSec .value{
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 200;
+}
+.profileSec .key{
+  color: yellow;
+  font-weight: bold;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.profileSec .profileImg img{
+  width: 150px;
+  height: 150px;
+  border-radius:200px;
+  box-shadow: 1px 1px 20px rgb(74, 73, 73);
+}
+
+.profileSec .message_go{
+  display: flex;
+  gap: 50px;
+}
+.message_go button{
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: all 0.01s ease-in-out;
+  border:none;
+  border-radius: 10px;
+}
+.message_go .message button{
+  background-color: rgb(0, 183, 255);
+}
+
+.message_go .goHome button{
+  background-color:yellow;
+}
+.message_go .message button:hover{
+  background-color: white;
+  transform: rotate(1deg) ;
+}
+.message_go .goHome button:hover{
+  background-color: white;
+  transform: rotate(1deg) ;
+}
+
+
+/* post */
+
+.post{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.post input{
+  font-size: 20px;
+  color: white;
+  height: 30px;
+  box-shadow: 1px 1px 80px  yellow;
+  border-radius: 20px;
+}
+.post button{
+  width: 150px;
+  height: 50px;
+  font-size: 15px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  transition: all 0.01s ease-in-out;
+  border:none;
+  border-radius: 10px;
+  background-color: rgb(0, 183, 255);
+}
+.post button:hover{
+  background-color: white;
+  transform: rotate(1deg) ;
+}
+/* Foot */
+.foot{
+  width:94.57rem;;
+}
+
+.foot-div{
+  position: absolute;
+  top: 300px;
+}
+
+footer{
+  background-image:linear-gradient(black , rgb(5,49,5));
+  height: 20rem;
+}
