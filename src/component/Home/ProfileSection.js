@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import checkingComponent from "./CheckComponent";
 import { Slide } from "react-slideshow-image";
 import ProfileContext from "./ProfileContext";
+import ChatContext from "../Chat/ChatProvider";
+import { baseURL } from "../../URL";
 export default function ProfileSection() {
   const {
     setCheckHome,
@@ -9,13 +11,16 @@ export default function ProfileSection() {
     setCheckProfile,
     usernameData,
     setUsernameData,
+    setCheckmsg,
   } = useContext(checkingComponent);
   const { prodata } = useContext(ProfileContext);
+  const { setuserTochat, setChecklogo, setCheckSingleChat , userTochat } =
+    useContext(ChatContext);
   const [product, setProduct] = useState([]);
   const allProduct = async (id) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/getProductbyId/${id}`,
+        `${baseURL}/getProductbyId/${id}`,
         {
           method: "GET",
         }
@@ -23,7 +28,7 @@ export default function ProfileSection() {
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result);
+        console.log(usernameData);
         setProduct(result);
       } else {
         console.log("Failed to fetch the product.");
@@ -34,20 +39,21 @@ export default function ProfileSection() {
   };
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    window.scrollTo(0, 0);
     if (usernameData) {
       allProduct(usernameData._id);
     }
   }, [usernameData]);
   return (
     <>
+      {console.log(usernameData.name)}
       {usernameData && (
         <>
           <div className="profileSec">
             <div className="profileImg">
               {usernameData.image && (
                 <img
-                  src={`http://localhost:5000/images/${usernameData.image}`}
+                  src={`${baseURL}/images/${usernameData.image}`}
                   alt="Profile"
                 />
               )}
@@ -90,7 +96,22 @@ export default function ProfileSection() {
             </div>
             <div className="message_go">
               <div className="message">
-                <button>Message</button>
+                <button
+                  onClick={() => {
+                    setCheckHome(false);
+                    if (usernameData) {
+                      setuserTochat(usernameData);
+                      console.log(userTochat);
+                    }
+                    setCheckSingleChat(true);
+                    setChecklogo(false);
+                    setCheckProfile(false);
+                    setCheckSearch(false);
+                    setCheckmsg(true);
+                  }}
+                >
+                  Message
+                </button>
               </div>
               <div className="goHome">
                 <button
@@ -101,6 +122,7 @@ export default function ProfileSection() {
                     }
                     setCheckProfile(false);
                     setCheckSearch(false);
+                    setCheckmsg(false);
                   }}
                 >
                   Go Back to Home
@@ -111,7 +133,7 @@ export default function ProfileSection() {
           {product &&
             product.map((data) => {
               const allimages = data.Productimages.map((img) => ({
-                url: `http://localhost:5000/product/${img}`,
+                url: `${baseURL}/product/${img}`,
               }));
 
               return (

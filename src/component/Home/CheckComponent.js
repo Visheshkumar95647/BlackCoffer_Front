@@ -6,11 +6,13 @@ export  function CheckComponent({children}) {
   const {prodata} = useContext(ProfileContext);
     const [checkHome , setCheckHome] = useState(true);
     const [checkSearch , setCheckSearch] = useState(false);
+    const [checkSetting , setCheckSetting] = useState(false);
     const [checkProfile , setCheckProfile] = useState(false);
     const [checkPost , setCheckPost] = useState(false);
     const [usernameData , setUsernameData] = useState(prodata);
+    const [checkMsg , setCheckmsg] = useState(false);
   return (
-    <checkingComponent.Provider value={{ checkHome , setCheckHome , usernameData , setUsernameData , checkSearch , setCheckSearch , checkProfile , setCheckProfile , checkPost , setCheckPost}}>
+    <checkingComponent.Provider value={{ checkSetting , setCheckSetting ,   checkHome , checkMsg  , setCheckmsg ,  setCheckHome , usernameData , setUsernameData , checkSearch , setCheckSearch , checkProfile , setCheckProfile , checkPost , setCheckPost}}>
             {children}
         </checkingComponent.Provider>
   )

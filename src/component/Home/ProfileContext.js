@@ -1,6 +1,8 @@
 import React, { createContext, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { baseURL } from '../../URL';
 const ProfileContext = createContext();
 
 export function ProfileProvider({ children }) {
@@ -14,7 +16,7 @@ export function ProfileProvider({ children }) {
       //   navigate('/');
       //   return;
       // }
-      const response = await fetch("http://localhost:5000/userdetails", {
+      const response = await fetch(`${baseURL}/userdetails`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -25,7 +27,7 @@ export function ProfileProvider({ children }) {
       if (data) {
         setProdata(data.user);
       } else {
-        alert("User Does Not Exist");
+        toast.error("User Does Not Exist");
         // navigate("/");
       }
     } catch (error) {
@@ -40,6 +42,7 @@ export function ProfileProvider({ children }) {
   return (
     <ProfileContext.Provider value={{ prodata, setProdata }}>
       {children}
+      <ToastContainer />
     </ProfileContext.Provider>
   );
 }

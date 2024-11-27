@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
-import "./App.css";
+import "../App.css";
 import "react-awesome-button/dist/styles.css";
-export default function Signup() {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { baseURL } from '../../URL';
+export default function Signup(){
   const [name, setName] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +19,7 @@ export default function Signup() {
 
   const checkpass = () => {
     if (password !== confirm) {
-      alert("Password didn't match");
+      toast.error("Password didn't match");
       setPassword("");
       setConfirm("");
     }
@@ -30,7 +33,7 @@ export default function Signup() {
     e.preventDefault();
 
     if (!name || !username || !password || !confirm || !number || !address || !city || !pin || !proimage) {
-      alert("Please fill in all fields");
+      toast.error("Please fill in all fields");
       return;
     }
 
@@ -45,7 +48,7 @@ export default function Signup() {
       formData.append('city', city);
       formData.append('pin', pin);
 
-      const response = await fetch("http://localhost:5000/register", {
+      const response = await fetch(`${baseURL}/register`, {
         method: "POST",
         body: formData,
         
@@ -58,25 +61,19 @@ export default function Signup() {
         navigate('/login');
       } else {
         console.error("Error:", result);
-        alert(result.error || "An error occurred");
+        toast.error(result.error || "An error occurred");
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("Failed to connect to the server");
+      toast.error("Failed to connect to the server");
     }
   };
 
   return (
     <>
-      <div className="front">
-        <img
-          loading="lazy"
-          src="/l-markethub.png"
-          alt="Market Logo"
-          className="image"
-          data-aos="zoom-in"
-        />
-      </div>
+      <div className="sign">
+      <ToastContainer />
+      <div className="sign-credentials">
       <main>
         <div className="input">
           <div>
@@ -109,6 +106,8 @@ export default function Signup() {
           <button onClick={adduser}>Register</button>
         </div>
       </main>
+      </div>
+      </div>
     </>
   );
 }
